@@ -33,11 +33,7 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
 
-      - name: Build Angular App
-        run: ng deploy --base-href=https://AdrianRojas4414.github.io/TecWebProyFinal/
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/proye_final_angular
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ng deploy --base-href=https://AdrianRojas4414.github.io/TecWebProyFinal/ --token=$GH_TOKEN
