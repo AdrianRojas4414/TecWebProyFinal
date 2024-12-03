@@ -24,13 +24,13 @@ export class CreateProductComponent {
   createProduct():void{
     this.fakeStoreService.createProduct(this.product).subscribe(
       {
-        next: (response) => {
-          console.log('Product created successfully:', response);
-          alert('Product created successfully!');
+        next: (updatedProduct) => {
+          console.log('Producto Creado Exitosamente!:', updatedProduct);
+          alert('Producto Creado Exitosamente!\n' + JSON.stringify(updatedProduct, null,2));
         },
         error: (err) => {
-          console.error('Error creating product:', err);
-          alert('Failed to create product.');
+          console.error('Error Creando el Producto:', err);
+          alert('Error Creando el Producto.');
         }
       }
     )

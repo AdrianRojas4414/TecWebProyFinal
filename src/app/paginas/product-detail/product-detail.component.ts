@@ -26,13 +26,13 @@ export class ProductDetailComponent implements OnInit{
   actualizarProducto():void{
     this.fakestoreService.updateProduct(this.productId, this.product).subscribe(
       {
-        next: (response) => {
-          console.log('Product updated successfully:', response);
-          alert('Product updated successfully!');
+        next: (updatedProduct) => {
+          console.log('Producto Actualizado Exitosamente!', updatedProduct);
+          alert('Producto Actualizado Exitosamente!\n' + JSON.stringify(updatedProduct, null,2));
         },
         error: (err) => {
-          console.error('Error updated product:', err);
-          alert('Failed to updated product.');
+          console.error('Error Actualizando el Producto:', err);
+          alert('Error Actualizando el Producto.');
         }
       }
     )

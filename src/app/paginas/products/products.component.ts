@@ -25,13 +25,13 @@ export class ProductsComponent implements OnInit{
   eliminarProducto(id:number):void{
     this.fakeStoreService.deleteProduct(id).subscribe(
       {
-        next: (response) => {
-          console.log('Product deleted successfully:', response);
-          alert('Product deleted successfully!');
+        next: (updatedProduct) => {
+          console.log('Producto Eliminado Exitosamente:', updatedProduct);
+          alert('Producto Eliminado Exitosamente!\n' + JSON.stringify(updatedProduct, null,2));
         },
         error: (err) => {
-          console.error('Error deleting product:', err);
-          alert('Failed to delete product.');
+          console.error('Error Eliminando Producto:', err);
+          alert('Error Eliminando Producto.');
         }
       }
     )
