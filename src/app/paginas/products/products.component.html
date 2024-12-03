@@ -1,2 +1,12 @@
 <p>products works!</p>
-<p>PRODUCTOS</p>
+
+<h2>Products</h2>
+<ul>
+  <li *ngFor="let product of products">
+    <h3>{{ product.title }}</h3>
+    <img src="{{product.image}}" alt="{{ product?.title }}" width="100">
+    <p>Price: ${{ product.price }}</p>
+    <a [routerLink]="product.id">Details</a><br>
+    <button (click)="eliminarProducto(product.id)">Delete</button>
+  </li>
+</ul>

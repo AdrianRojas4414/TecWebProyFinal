@@ -1,2 +1,27 @@
 <p>create-product works!</p>
-<p>CREACION DE PRODUCTOS</p>
+
+<h2>Create New Product</h2>
+<form (ngSubmit)="createProduct()">
+  <label>
+    Title:
+    <input [(ngModel)]="product.title" name="title" required>
+  </label>
+  <label>
+    Price:
+    <input type="number" [(ngModel)]="product.price" name="price" required>
+  </label>
+  <label>
+    Description:
+    <textarea [(ngModel)]="product.description" name="description"></textarea>
+  </label>
+  <label>
+    Image URL:
+    <input [(ngModel)]="product.image" name="image">
+  </label>
+  <label>
+    Category:
+    <input [(ngModel)]="product.category" name="category">
+  </label>
+  <button type="submit">Create</button>
+</form>
+<a routerLink="/products">Back to Products</a>
