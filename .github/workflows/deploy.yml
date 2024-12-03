@@ -23,6 +23,12 @@ jobs:
       
       - name: Install Angular CLI
         run: npm install -g @angular/cli
+
+      - name: Configure Git Authentication
+        run: |
+          git config --global url."https://github.com/".insteadOf git@github.com:
+          git config --global credential.helper store
+          echo "https://${{ secrets.GITHUB_TOKEN }}:@github.com" > ~/.git-credentials
       
       - name: Configure Git Identity
         run: |
