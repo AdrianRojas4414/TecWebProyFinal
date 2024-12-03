@@ -36,3 +36,6 @@ jobs:
       # Deployar a GitHub Pages
       - name: Deploy to GitHub Pages
         run: ng deploy --base-href=https://AdrianRojas4414.github.io/TecWebProyFinal/
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+        publish_dir: ./dist/proye_final_angular
