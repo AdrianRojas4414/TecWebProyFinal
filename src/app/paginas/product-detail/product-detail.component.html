@@ -1,3 +1,8 @@
+<h3>{{ product?.title }}</h3>
+<p>Descripción: {{ product?.description }}</p>
+<p>Precio: ${{ product?.price }}</p>
+<img [src]="product?.image" [alt]="product?.title" width="100"><br><br>
+
 <h2>Editar Producto</h2>
 
 <form (ngSubmit)="actualizarProducto()">
@@ -16,10 +21,4 @@
   <br><br><button type="submit">Actualizar Producto</button>
 </form>
 
-
-
-<h3>{{ product?.title }}</h3>
-<p>Descripción: {{ product?.description }}</p>
-<p>Precio: ${{ product?.price }}</p>
-<img [src]="product?.image" [alt]="product?.title" width="100"><br><br>
 <a routerLink="/products">Volver a Productos</a>
